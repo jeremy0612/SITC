@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  mmseg_a:
+    build:
+      context: .
+      shm_size: '8gb'
+    volumes:
+      - ./mount_dataset:/mmsegmentation/data
+      - ./mount_script:/mmsegmentation/script
+      - ./mount_model:/mmsegmentation/work_dirs
+      - ./mount_config:/mmsegmentation/configs/test_method
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
+    command: bash
+  mmseg_b:
+    image: 'mmsegmentation:master_branch'
+    build:
+      shm_size: '8gb'
+    volumes:
+      - ./mount_dataset:/mmsegmentation/data
+      - ./mount_script:/mmsegmentation/script
+      - ./mount_model:/mmsegmentation/work_dirs
+      - ./mount_config:/mmsegmentation/configs/test_method
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
+    command: bash
+    

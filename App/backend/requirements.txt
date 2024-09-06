@@ -1,0 +1,22 @@
+Flask
+mysql-connector-python
+flask-cors
+Pillow
+matplotlib
+numpy<2
+opencv-python
+secure-smtplib
+bcrypt
+Flask-Mail
+PyJWT
+python-dotenv
+imageio
+requests
+geopandas
+shapely
+
+# pip install torch==1.13.0+cpu torchvision==0.14.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+# pip install mmcv-lite==2.0.0rc4 --extra-index-url https://download.openmmlab.com/mmcv/dist/cpu/torch1.13/index.html
+# pip install mmcv==2.0.0rc4 --extra-index-url https://download.openmmlab.com/mmcv/dist/cpu/torch1.13/index.html
+ftfy
+mmsegmentation==1.2.2

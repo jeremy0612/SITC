@@ -1,0 +1,24 @@
+# Adjust single service
+    docker-compose rm -s -v yourService
+    docker-compose up -d yourService
+# Get LoveDA dataset
+--> Download Train.zip
+wget https://zenodo.org/record/5706578/files/Train.zip
+--> Download Val.zip
+wget https://zenodo.org/record/5706578/files/Val.zip
+--> Download Test.zip
+wget https://zenodo.org/record/5706578/files/Test.zip
+
+# sample_config3 experiment
+checkpoint at 64000 iterations
+    mIoU: 59.1957
+    mAcc: 71.5243
+checkpoint at 56000 iterations
+    mIoU: 55.0742
+    mAcc: 69.1785
+checkpoint at 48000 iterations
+    mIoU: 55.3342
+    mAcc: 66.1414
+# checkpoint with rural dataset
+    sample_config2: iter_40000.pth
+    sample_config3: iter_80000.pth
