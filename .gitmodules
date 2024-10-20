@@ -1,3 +1,0 @@
-[submodule "App/backend/mmsegmentation"]
-	path = App/backend/mmsegmentation
-	url = https://github.com/open-mmlab/mmsegmentation
